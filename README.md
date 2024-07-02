@@ -2,7 +2,7 @@
 
 To process the Fbx, FBX tools must be installed from [here](https://help.autodesk.com/view/FBX/2020/ENU/?guid=FBX_Developer_Help_scripting_with_python_fbx_installing_python_fbx_html)
 
-
+-----------------
 # poselib
 
 `poselib` is a library for loading, manipulating, and retargeting skeleton poses and motions. It is separated into three modules: `poselib.core` for basic data loading and tensor operations, `poselib.skeleton` for higher-level skeleton operations, and `poselib.visualization` for displaying skeleton poses. This library is built on top of the PyTorch framework and requires data to be in PyTorch tensors.

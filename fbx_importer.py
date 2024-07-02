@@ -34,7 +34,7 @@ from poselib.skeleton.skeleton3d import SkeletonTree, SkeletonState, SkeletonMot
 from poselib.visualization.common import plot_skeleton_state, plot_skeleton_motion_interactive
 
 # source fbx file path
-fbx_file = "poselib/data/01_01_cmu.fbx"
+fbx_file = "res/Dog/walk.fbx"
 
 # import fbx file - make sure to provide a valid joint name for root_joint
 motion = SkeletonMotion.from_fbx(
@@ -44,7 +44,7 @@ motion = SkeletonMotion.from_fbx(
 )
 
 # save motion in npy format
-motion.to_file("poselib/data/01_01_cmu.npy")
+motion.to_file("res/Dog/walk.npy")
 
 # visualize motion
 plot_skeleton_motion_interactive(motion)
