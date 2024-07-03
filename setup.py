@@ -8,6 +8,7 @@ setup(
     author_email="",
     install_requires=[
         "matplotlib",
+        "argparse",
     ],
     packages=find_packages(include=["poselib*"], exclude=[]),
     classifiers=[

@@ -27,14 +27,11 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-import os
-import json
-
-from poselib.skeleton.skeleton3d import SkeletonTree, SkeletonState, SkeletonMotion
-from poselib.visualization.common import plot_skeleton_state, plot_skeleton_motion_interactive
+from poselib.skeleton.skeleton3d import SkeletonMotion
+from poselib.visualization.common import plot_skeleton_motion_interactive
 
 # source fbx file path
-fbx_file = "res/Dog/walk.fbx"
+fbx_file = "res/Dog/walk2.fbx"
 
 # import fbx file - make sure to provide a valid joint name for root_joint
 motion = SkeletonMotion.from_fbx(
@@ -44,7 +41,7 @@ motion = SkeletonMotion.from_fbx(
 )
 
 # save motion in npy format
-motion.to_file("res/Dog/walk.npy")
+motion.to_file("res/motion/walk2.npy")
 
 # visualize motion
 plot_skeleton_motion_interactive(motion)
