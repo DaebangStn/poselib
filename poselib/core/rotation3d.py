@@ -220,7 +220,7 @@ def quat_from_rotation_matrix(m):
 @torch.jit.script
 def quat_mul_norm(x, y):
     """
-    Combine two set of 3D rotations together using \**\* operator. The shape needs to be
+    Combine two set of 3D rotations together using asterisk operator. The shape needs to be
     broadcastable
     """
     return quat_normalize(quat_mul(x, y))
