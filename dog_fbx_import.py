@@ -23,8 +23,9 @@ if __name__ == "__main__":
     # min_h = torch.min(motion.global_translation[..., 2:3])
 
     root_trans = motion.root_translation
-    root_trans -= min_h
+    root_trans[:, 2:3] -= min_h
     root_trans *= args.scale
+    root_trans[:, 2] += 0.1  # prevent penetration
 
     sk_state = SkeletonState.from_rotation_and_root_translation(motion.skeleton_tree, motion.local_rotation, root_trans)
     motion_corrected = SkeletonMotion.from_skeleton_state(sk_state, fps=motion.fps)
