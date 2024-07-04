@@ -25,7 +25,7 @@ if __name__ == "__main__":
     root_trans = motion.root_translation
     root_trans[:, 2:3] -= min_h
     root_trans *= args.scale
-    root_trans[:, 2] += 0.1  # prevent penetration
+    root_trans[:, 2] += 0.05  # prevent penetration
 
     sk_state = SkeletonState.from_rotation_and_root_translation(motion.skeleton_tree, motion.local_rotation, root_trans)
     motion_corrected = SkeletonMotion.from_skeleton_state(sk_state, fps=motion.fps)
