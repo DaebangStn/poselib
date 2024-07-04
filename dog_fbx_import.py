@@ -9,6 +9,7 @@ if __name__ == "__main__":
     args = ArgumentParser(description="FBX to Skeleton Motion NPY Converter")
     args.add_argument("fbx", type=str, help="Path to the input fbx file")
     args.add_argument("npz", type=str, help="Path to the output npz file")
+    args.add_argument("--scale", type=float, help="Scalar value for mjcf model", default=0.012)
     args.add_argument("--root", type=str, help="Root joint name.", default="Hips")
     args.add_argument("--vis", action='store_true', help="Visualize the skeleton motion.")
     args = args.parse_args()
@@ -23,6 +24,7 @@ if __name__ == "__main__":
 
     root_trans = motion.root_translation
     root_trans -= min_h
+    root_trans *= args.scale
 
     sk_state = SkeletonState.from_rotation_and_root_translation(motion.skeleton_tree, motion.local_rotation, root_trans)
     motion_corrected = SkeletonMotion.from_skeleton_state(sk_state, fps=motion.fps)
