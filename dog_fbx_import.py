@@ -28,10 +28,10 @@ if __name__ == "__main__":
     root_trans[:, 2] += 0.1  # prevent penetration
 
     sk_state = SkeletonState.from_rotation_and_root_translation(motion.skeleton_tree, motion.local_rotation, root_trans)
-    motion_corrected = SkeletonMotion.from_skeleton_state(sk_state, fps=motion.fps)
+    motion = SkeletonMotion.from_skeleton_state(sk_state, fps=motion.fps)
 
-    motion_corrected.to_file(args.npz)
+    motion.to_file(args.npz)
     if args.vis:
-        plot_skeleton_motion_interactive(motion_corrected)
+        plot_skeleton_motion_interactive(motion)
 
     print('Done.')
